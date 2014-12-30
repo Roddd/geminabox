@@ -148,7 +148,9 @@ module Geminabox
       end
 
       if api_request?
-        "Gem #{gem.name} received and indexed."
+        "Gem #{gem.name} received and indexed. Redirecting to index in 10 seconds..."
+        sleep(10)
+        redirect url("/")
       else
         redirect url("/")
       end
